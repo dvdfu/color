@@ -1,0 +1,19 @@
+{
+    "name": "light",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "howler": "^2.0.5",
+        "pixi.js": "^4.6.1",
+        "uglifyjs-webpack-plugin": "^1.1.0",
+        "vec2": "^1.6.0",
+        "webpack": "^3.8.1"
+    }
+}
