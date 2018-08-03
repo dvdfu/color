@@ -25,4 +25,7 @@ function update() {
   stage.update();
 }
 
-PIXI.loader.add("assets/eye.png").load(setup);
+PIXI.loader
+  .add("assets/eye.png")
+  .add("assets/slider_back.png")
+  .load(setup);
