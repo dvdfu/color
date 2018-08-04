@@ -5,6 +5,7 @@ module.exports = {
   output: {
     filename: "dist/bundle.js",
   },
+  mode: "none",
   // plugins: [
   //   new UglifyJsPlugin({
   //     sourceMap: true,
