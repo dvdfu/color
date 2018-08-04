@@ -16,6 +16,6 @@ npm install
 To run:
 
 ```sh
-webpack-dev-server
+npm start
 # visit localhost:8080
 ```

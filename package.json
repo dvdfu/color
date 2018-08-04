@@ -2,16 +2,17 @@
     "name": "light",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "index.jsx",
     "scripts": {
-        "start": "webpack-dev-server index.js"
+        "start": "webpack-dev-server index.jsx"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "howler": "^2.0.5",
-        "uglifyjs-webpack-plugin": "^1.1.0",
+        "@babel/core": "^7.0.0-beta.56",
+        "@babel/preset-react": "^7.0.0-beta.56",
+        "babel-loader": "8.0.0-beta.0",
         "webpack": "^4.16.3",
         "webpack-cli": "^3.1.0"
     },

@@ -1,14 +1,24 @@
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const path = require('path');
 
-module.exports = {
-  entry: "./src/index.js",
+const config = {
+  entry: [
+    'index.jsx',
+  ],
   output: {
     filename: "dist/bundle.js",
   },
-  mode: "none",
-  // plugins: [
-  //   new UglifyJsPlugin({
-  //     sourceMap: true,
-  //   }),
-  // ],
+  module: {
+    rules: [
+      {
+        test: /\.jsx?/,
+        loaders: [
+          'babel-loader',
+        ],
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  mode: 'none',
 };
+
+module.exports = config;
