@@ -21,6 +21,8 @@ class VisualSpectrumSlider extends React.Component {
   }
 
   visibleSpectrumToRGB(nm) {
+    var red, green, blue;
+
     if (nm < 380 || nm > 780) {
       throw "Out of range";
     } else if (nm < 440) {
@@ -49,23 +51,30 @@ class VisualSpectrumSlider extends React.Component {
       blue = 0;
     }
 
+    var factor;
+
     if (nm < 420) {
       factor = 0.3 + 0.7*(nm - 380) / (420 - 380);
-    } else if (nm < 791) {
+    } else if (nm < 701) {
       factor = 1;
     } else {
       factor = 0.3 + 0.7*(780 - nm) / (780 - 700)
     }
 
-    r = adjust(red, factor);
-    g = adjust(green, factor);
-    b = adjust(blue, factor);
+    const r = this.adjust(red, factor);
+    const g = this.adjust(green, factor);
+    const b = this.adjust(blue, factor);
 
-    return [r, g, b];
+    return r + "," + g + "," + b;
   }
 
   onSliderChange(value) {
-    this.setState({ wavelength: value });
+    const rgbString = this.visibleSpectrumToRGB(value);
+    this.setState({ wavelength: value, rgb: rgbString });
+  }
+
+  rgbStyle(){
+    return { color: "rgb(" + this.state.rgb + ")"};
   }
 
   render(){
@@ -85,7 +94,8 @@ class VisualSpectrumSlider extends React.Component {
           }}
           railStyle={{ height: 10 }}
         />
-        <p>Wavelength: {this.state.wavelength} nm</p>
+      <p style={this.rgbStyle()}>Wavelength: {this.state.wavelength} nm</p>
+      <p>RGB: {this.state.rgb}</p>
       </div>
     )
   }
