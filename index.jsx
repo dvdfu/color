@@ -1,5 +1,6 @@
 const React = require("react");
 const ReactDOM = require("react-dom");
+import VisualSpectrumSlider from './src/VisualSpectrumSlider.jsx';
 
 const chapters = [];
 
@@ -54,6 +55,7 @@ chapters[2] = (
       Within the visible spectrum, the wavelength defines which colour we see!
       Try to find the wavelengths that correspond to the following colours:
     </p>
+    <VisualSpectrumSlider/>
   </div>
 );
 
