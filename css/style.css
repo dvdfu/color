@@ -1,26 +1,24 @@
-body{
+body {
+    margin: 0;
+    background: #eee;
 
-	margin:0;
-	background: #eee;
+    font-family: sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+    line-height: 30px;
 
-	font-family: sans-serif;
-	font-size: 22px;
-	font-weight: 100;
-	line-height: 30px;
+    background-repeat: no-repeat;
 
-	min-width:1040px;
-	background-repeat: no-repeat;
-
-	overflow-x:hidden;
-
+    overflow-x: hidden;
 }
 
-.chapter{
-	margin: 50px auto;
-	width:800px;
+.chapter {
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 0 30px;
 }
 
 .chapter img {
-    display:block;
-    margin:auto;
+    display: block;
+    margin: auto;
 }
