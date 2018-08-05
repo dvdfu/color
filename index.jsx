@@ -5,13 +5,13 @@ import VisualSpectrumSlider from './src/VisualSpectrumSlider.jsx';
 const chapters = [];
 
 chapters[0] = (
-  <div className="chapter">
+  <div className="chapter" key="0">
     <h1>The Science of Colour</h1>
   </div>
 );
 
 chapters[1] = (
-  <div className="chapter">
+  <div className="chapter" key="1">
     <h2>Huh???</h2>
     <p>
       In 2015, the Internet furiously debated over the colour of a dress found
@@ -33,7 +33,7 @@ chapters[1] = (
 );
 
 chapters[2] = (
-  <div className="chapter">
+  <div className="chapter" key="2">
     <h2>Light as a Wave</h2>
     <p>
       Without light, there wouldn’t be any colour to see. So let’s start with
