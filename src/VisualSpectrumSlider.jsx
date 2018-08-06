@@ -1,15 +1,15 @@
-import Slider from 'rc-slider';
+import Slider from "rc-slider";
 const React = require("react");
 
-import 'rc-slider/assets/index.css';
+import "rc-slider/assets/index.css";
 
 class VisualSpectrumSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {wavelength: 400};
+    this.state = { wavelength: 400 };
   }
 
-  adjust(colour, factor){
+  adjust(colour, factor) {
     const gamma = 0.8;
     const intensityMax = 255;
 
@@ -54,11 +54,11 @@ class VisualSpectrumSlider extends React.Component {
     var factor;
 
     if (nm < 420) {
-      factor = 0.3 + 0.7*(nm - 380) / (420 - 380);
+      factor = 0.3 + 0.7 * (nm - 380) / (420 - 380);
     } else if (nm < 701) {
       factor = 1;
     } else {
-      factor = 0.3 + 0.7*(780 - nm) / (780 - 700)
+      factor = 0.3 + 0.7 * (780 - nm) / (780 - 700);
     }
 
     const r = this.adjust(red, factor);
@@ -73,11 +73,11 @@ class VisualSpectrumSlider extends React.Component {
     this.setState({ wavelength: value, rgb: rgbString });
   }
 
-  rgbStyle(){
-    return { color: "rgb(" + this.state.rgb + ")"};
+  rgbStyle() {
+    return { color: "rgb(" + this.state.rgb + ")" };
   }
 
-  render(){
+  render() {
     return (
       <div>
         <Slider
@@ -94,11 +94,11 @@ class VisualSpectrumSlider extends React.Component {
           }}
           railStyle={{ height: 10 }}
         />
-      <p style={this.rgbStyle()}>Wavelength: {this.state.wavelength} nm</p>
-      <p>RGB: {this.state.rgb}</p>
+        <p style={this.rgbStyle()}>Wavelength: {this.state.wavelength} nm</p>
+        <p>RGB: {this.state.rgb}</p>
       </div>
-    )
+    );
   }
 }
 
-export default VisualSpectrumSlider
+export default VisualSpectrumSlider;
