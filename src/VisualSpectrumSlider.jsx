@@ -76,11 +76,7 @@ class VisualSpectrumSlider extends React.Component {
 
 <<<<<<< HEAD
   rgbStyle(){
-    return { background: "rgb(" + this.state.rgb + ")"};
-=======
-  rgbStyle() {
-    return { color: "rgb(" + this.state.rgb + ")" };
->>>>>>> 757f6231b5135905caf0a57da125d1f0a21c24ca
+    return { background: "rgb(" + this.state.rgb + ")" };
   }
 
   render() {
@@ -90,13 +86,8 @@ class VisualSpectrumSlider extends React.Component {
       <div className="slider">
         <ColorSwatch r={color.r} g={color.g} b={color.b} />
         <Slider
-<<<<<<< HEAD
           min={380}
           max={700}
-=======
-          min={300}
-          max={800}
->>>>>>> 757f6231b5135905caf0a57da125d1f0a21c24ca
           defaultValue={this.state.wavelength}
           onChange={this.onSliderChange.bind(this)}
           trackStyle={{
