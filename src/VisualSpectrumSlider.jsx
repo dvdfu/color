@@ -10,7 +10,7 @@ const MAX_INTENSITY = 255;
 class VisualSpectrumSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { wavelength: 500, rgb: this.wavelengthToRgb(500) };
+    this.state = { wavelength: 500 };
   }
 
   correctGamma(color, factor) {
@@ -74,10 +74,6 @@ class VisualSpectrumSlider extends React.Component {
     });
   }
 
-  rgbStyle(){
-    return { background: "rgb(" + this.state.rgb + ")" };
-  }
-
   render() {
     const color = this.wavelengthToRgb(this.state.wavelength);
 
@@ -85,8 +81,8 @@ class VisualSpectrumSlider extends React.Component {
       <div className="slider">
         <ColorSwatch r={color.r} g={color.g} b={color.b} />
         <Slider
-          min={380}
-          max={700}
+          min={300}
+          max={800}
           defaultValue={this.state.wavelength}
           onChange={this.onSliderChange.bind(this)}
           trackStyle={{
