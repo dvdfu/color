@@ -10,7 +10,7 @@ const MAX_INTENSITY = 255;
 class VisualSpectrumSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { wavelength: 500, rgb: this.visibleSpectrumToRGB(500) };
+    this.state = { wavelength: 500, rgb: this.wavelengthToRgb(500) };
   }
 
   correctGamma(color, factor) {
