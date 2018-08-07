@@ -6,7 +6,7 @@ import 'rc-slider/assets/index.css';
 class VisualSpectrumSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {wavelength: 400};
+    this.state = {wavelength: 500, rgb: this.visibleSpectrumToRGB(500)};
   }
 
   adjust(colour, factor){
@@ -74,7 +74,7 @@ class VisualSpectrumSlider extends React.Component {
   }
 
   rgbStyle(){
-    return { color: "rgb(" + this.state.rgb + ")"};
+    return { background: "rgb(" + this.state.rgb + ")"};
   }
 
   render(){
@@ -82,7 +82,7 @@ class VisualSpectrumSlider extends React.Component {
       <div>
         <Slider
           min={380}
-          max={780}
+          max={700}
           defaultValue={this.state.wavelength}
           onChange={this.onSliderChange.bind(this)}
           trackStyle={{ height: 10 }}
