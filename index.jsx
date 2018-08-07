@@ -1,6 +1,6 @@
 const React = require("react");
 const ReactDOM = require("react-dom");
-import VisualSpectrumSlider from './src/VisualSpectrumSlider.jsx';
+import VisualSpectrumSlider from "./src/VisualSpectrumSlider.jsx";
 
 const chapters = [];
 
@@ -44,7 +44,42 @@ chapters[2] = (
       <strong>wavelength</strong> describes how much energy it carries; smaller
       wavelengths mean higher energy.
     </p>
-    [EM Spectrum table that shows wavelengths and common names for them]
+    <table>
+      <tbody>
+        <tr>
+          <th>Wavelength Range (nm)</th>
+          <th>Common Name</th>
+        </tr>
+        <tr>
+          <td>0.0001 - 0.01</td>
+          <td>Gamma Rays</td>
+        </tr>
+        <tr>
+          <td>0.01 - 10</td>
+          <td>X-Rays</td>
+        </tr>
+        <tr>
+          <td>10 - 100</td>
+          <td>Ultraviolet</td>
+        </tr>
+        <tr>
+          <td>380 - 700</td>
+          <td>Visible Light</td>
+        </tr>
+        <tr>
+          <td>VERIFY</td>
+          <td>Infrared</td>
+        </tr>
+        <tr>
+          <td>VERIFY</td>
+          <td>Microwaves</td>
+        </tr>
+        <tr>
+          <td>VERIFY</td>
+          <td>Radio Waves</td>
+        </tr>
+      </tbody>
+    </table>
     <p>
       Our eyes can detect light with wavelengths around 390-700nm, so we call
       this range of the light the <strong>visible spectrum</strong>. There are
@@ -55,7 +90,7 @@ chapters[2] = (
       Within the visible spectrum, the wavelength defines which colour we see!
       Try to find the wavelengths that correspond to the following colours:
     </p>
-    <VisualSpectrumSlider/>
+    <VisualSpectrumSlider />
   </div>
 );
 

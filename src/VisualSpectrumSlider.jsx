@@ -78,26 +78,30 @@ class VisualSpectrumSlider extends React.Component {
     const color = this.wavelengthToRgb(this.state.wavelength);
 
     return (
-      <div className="slider">
+      <div className="slider_container">
         <ColorSwatch r={color.r} g={color.g} b={color.b} />
+        <p>
+          Wavelength: <strong>{this.state.wavelength}nm</strong>
+        </p>
         <Slider
           min={300}
           max={800}
           defaultValue={this.state.wavelength}
           onChange={this.onSliderChange.bind(this)}
-          trackStyle={{
-            height: 10,
-          }}
           handleStyle={{
-            height: 28,
-            width: 28,
-            marginLeft: -14,
-            marginTop: -9,
+            height: 40,
+            width: 40,
+            marginLeft: -20,
+            marginTop: -10,
+          }}
+          trackStyle={{
+            height: 20,
+            borderRadius: 0,
           }}
           railStyle={{
-            height: 10,
+            height: 20,
+            borderRadius: 0,
           }}
-          tipFormatter={x => x}
         />
       </div>
     );
