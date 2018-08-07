@@ -22,3 +22,15 @@ body {
     display: block;
     margin: auto;
 }
+
+.slider {
+    max-width: 400px;
+}
+
+.colorSwatch {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 10px;
+}
