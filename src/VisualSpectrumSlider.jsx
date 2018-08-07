@@ -1,104 +1,121 @@
-import Slider from 'rc-slider';
+import Slider from "rc-slider";
+import ColorSwatch from "./ColorSwatch.jsx";
 const React = require("react");
 
-import 'rc-slider/assets/index.css';
+import "rc-slider/assets/index.css";
+
+const GAMMA = 0.8;
+const MAX_INTENSITY = 255;
 
 class VisualSpectrumSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {wavelength: 500, rgb: this.visibleSpectrumToRGB(500)};
+    this.state = { wavelength: 500, rgb: this.visibleSpectrumToRGB(500) };
   }
 
-  adjust(colour, factor){
-    const gamma = 0.8;
-    const intensityMax = 255;
-
-    if (colour == 0) {
-      return 0;
-    } else {
-      return Math.round(intensityMax * Math.pow(colour * factor, gamma));
-    }
+  correctGamma(color, factor) {
+    if (color == 0) return 0;
+    return Math.round(MAX_INTENSITY * Math.pow(color * factor, GAMMA));
   }
 
-  visibleSpectrumToRGB(nm) {
-    var red, green, blue;
+  wavelengthToRgb(nm) {
+    var r, g, b;
 
     if (nm < 380 || nm > 780) {
-      throw "Out of range";
+      r = 0;
+      g = 0;
+      b = 0;
     } else if (nm < 440) {
-      red = -(nm - 440) / (440 - 380);
-      green = 0;
-      blue = 1;
+      r = -(nm - 440) / (440 - 380);
+      g = 0;
+      b = 1;
     } else if (nm < 490) {
-      red = 0;
-      green = (nm - 440) / (490 - 440);
-      blue = 1;
+      r = 0;
+      g = (nm - 440) / (490 - 440);
+      b = 1;
     } else if (nm < 510) {
-      red = 0;
-      green = 1;
-      blue = -(nm - 510) / (510 - 490);
+      r = 0;
+      g = 1;
+      b = -(nm - 510) / (510 - 490);
     } else if (nm < 580) {
-      red = (nm - 510) / (580 - 510);
-      green = 1;
-      blue = 0;
+      r = (nm - 510) / (580 - 510);
+      g = 1;
+      b = 0;
     } else if (nm < 645) {
-      red = 1;
-      green = -(nm - 645) / (645 - 580);
-      blue = 0;
+      r = 1;
+      g = -(nm - 645) / (645 - 580);
+      b = 0;
     } else {
-      red = 1;
-      green = 0;
-      blue = 0;
+      r = 1;
+      g = 0;
+      b = 0;
     }
 
     var factor;
 
     if (nm < 420) {
-      factor = 0.3 + 0.7*(nm - 380) / (420 - 380);
+      factor = 0.3 + 0.7 * (nm - 380) / (420 - 380);
     } else if (nm < 701) {
       factor = 1;
     } else {
-      factor = 0.3 + 0.7*(780 - nm) / (780 - 700)
+      factor = 0.3 + 0.7 * (780 - nm) / (780 - 700);
     }
 
-    const r = this.adjust(red, factor);
-    const g = this.adjust(green, factor);
-    const b = this.adjust(blue, factor);
-
-    return r + "," + g + "," + b;
+    return {
+      r: this.correctGamma(r, factor),
+      g: this.correctGamma(g, factor),
+      b: this.correctGamma(b, factor),
+    };
   }
 
   onSliderChange(value) {
-    const rgbString = this.visibleSpectrumToRGB(value);
-    this.setState({ wavelength: value, rgb: rgbString });
+    this.setState({
+      wavelength: value,
+    });
   }
 
+<<<<<<< HEAD
   rgbStyle(){
     return { background: "rgb(" + this.state.rgb + ")"};
+=======
+  rgbStyle() {
+    return { color: "rgb(" + this.state.rgb + ")" };
+>>>>>>> 757f6231b5135905caf0a57da125d1f0a21c24ca
   }
 
-  render(){
+  render() {
+    const color = this.wavelengthToRgb(this.state.wavelength);
+
     return (
-      <div>
+      <div className="slider">
+        <ColorSwatch r={color.r} g={color.g} b={color.b} />
         <Slider
+<<<<<<< HEAD
           min={380}
           max={700}
+=======
+          min={300}
+          max={800}
+>>>>>>> 757f6231b5135905caf0a57da125d1f0a21c24ca
           defaultValue={this.state.wavelength}
           onChange={this.onSliderChange.bind(this)}
-          trackStyle={{ height: 10 }}
+          trackStyle={{
+            height: 10,
+          }}
           handleStyle={{
             height: 28,
             width: 28,
             marginLeft: -14,
             marginTop: -9,
           }}
-          railStyle={{ height: 10 }}
+          railStyle={{
+            height: 10,
+          }}
+          tipFormatter={x => x}
         />
-      <p style={this.rgbStyle()}>Wavelength: {this.state.wavelength} nm</p>
-      <p>RGB: {this.state.rgb}</p>
       </div>
-    )
+    );
   }
 }
 
-export default VisualSpectrumSlider
+export default VisualSpectrumSlider;
