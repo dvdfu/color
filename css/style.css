@@ -17,11 +17,6 @@ table {
     border-spacing: 30px 0;
 }
 
-p {
-    line-height: 1.5em;
-    margin: 1.5em 0;
-}
-
 .chapter {
     margin: 50px auto;
     max-width: 800px;
@@ -33,13 +28,25 @@ p {
     margin: auto;
 }
 
-.slider_container {
+.slider-container {
     /* outline: 1px solid gray; */
     margin: 30px 0;
 }
 
-.colorSwatch {
+.slider-container .targets {
+    margin: 30px 0;
+}
+
+.color-swatch {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+}
+
+.color-target {
+    display: inline-block;
+    margin-right: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
 }

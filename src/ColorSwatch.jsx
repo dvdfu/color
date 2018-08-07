@@ -9,7 +9,7 @@ class ColorSwatch extends React.Component {
   render() {
     return (
       <div
-        className="colorSwatch"
+        className="color-swatch"
         style={{
           backgroundColor: ColorUtil.rgbToHex(
             this.props.r,

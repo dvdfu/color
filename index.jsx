@@ -36,13 +36,9 @@ chapters[2] = (
   <div className="chapter" key="2">
     <h2>Light as a Wave</h2>
     <p>
-      Without light, there wouldn’t be any colour to see. So let’s start with
-      how exactly light works.
-    </p>
-    <p>
       Light is a type of energy that travels in a wave. The{" "}
-      <strong>wavelength</strong> describes how much energy it carries; smaller
-      wavelengths mean higher energy.
+      <strong>wavelength</strong> describes how much energy it carries; a
+      smaller wavelength means more energy.
     </p>
     <table>
       <tbody>
@@ -63,7 +59,7 @@ chapters[2] = (
           <td>Ultraviolet</td>
         </tr>
         <tr>
-          <td>380 - 700</td>
+          <td>390 - 700</td>
           <td>Visible Light</td>
         </tr>
         <tr>
@@ -81,16 +77,27 @@ chapters[2] = (
       </tbody>
     </table>
     <p>
-      Our eyes can detect light with wavelengths around 390-700nm, so we call
-      this range of the light the <strong>visible spectrum</strong>. There are
+      Our eyes are built to detect light with wavelengths of around 390 - 700nm,
+      so we call this range the <strong>visible spectrum</strong>! There are
       plenty of other wavelengths we can’t see, like microwaves, radio waves,
-      and X-rays, because our eyes don’t react to them.
+      and X-rays, because our eyes can’t react to them.
     </p>
     <p>
-      Within the visible spectrum, the wavelength defines which colour we see!
-      Try to find the wavelengths that correspond to the following colours:
+      Drag the slider below to control the wavelength of a light wave, and see
+      what colour it produces! Try to get the colour to match some of the sample
+      colours in the palette.
     </p>
     <VisualSpectrumSlider />
+    <p>
+      Why don’t some colours we know, like pink or brown, appear in the visible
+      spectrum?
+    </p>
+    <p>
+      The visible spectrum only represents the colour of a <i>single</i> wave.
+      In reality, light sources such as light bulbs emit many many waves that
+      have a wide range of different wavelengths. The combinations and
+      intensities of these waves produce all the colours we know!
+    </p>
   </div>
 );
 
