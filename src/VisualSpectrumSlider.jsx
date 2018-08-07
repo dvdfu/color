@@ -74,7 +74,6 @@ class VisualSpectrumSlider extends React.Component {
     });
   }
 
-<<<<<<< HEAD
   rgbStyle(){
     return { background: "rgb(" + this.state.rgb + ")" };
   }
